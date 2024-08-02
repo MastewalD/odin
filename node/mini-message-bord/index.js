@@ -1,0 +1,11 @@
+const express = require("express")
+const path = require("path")
+const messageRoute = require("./routes/message")
+const app = express()
+app.set('view engine','ejs')
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(express.static(path.join(__dirname,"views")))
+app.use("/message",messageRoute)
+
+app.listen(5000,()=>console.log('The server run on port 5000'))
