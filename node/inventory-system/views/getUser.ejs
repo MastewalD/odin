@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getAll</title>
+</head>
+<body>
+    <h1>Get All Users</h1>
+   <% users.forEach(user=>{%>
+        <div>
+            <h1><%= user.firstName%></h1>
+            <a href="/user/detail/<%= user.id %>">details</a>
+            <a href="/user/update/<%= user.id %>">update</a>
+            <form action="/user/delete/<%= user.id %>" method="post">
+                <button>delete</button>
+            </form>
+        </div>
+   <% })%>
+</body>
+</html>
