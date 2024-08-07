@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update product</title>
+</head>
+<body>
+    <h1>Update product: </h1>
+    <form action="/product/update/<%= product.id %>" method="post">
+        <div>
+            <label for="productName">ProductName: </label>
+            <input type="text" name="productName" value=<%= product.productName %>>
+
+        </div>
+        <div>
+            <label for="productDescription">ProductDescription: </label>
+            <input type="text" name="productDescription" value=<%= product.productDescription %>>
+
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

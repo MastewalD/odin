@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create product</title>
+</head>
+<body>
+    <h1>Create New Product: </h1>
+    <form action="/product/create" method="post">
+        <div>
+            <label for="productName">ProductName: </label>
+            <input type="text" name="productName">
+        </div>
+        <div>
+            <label for="category">Category: </label>
+            <select name="category">
+                <option value="">Select a category</option>
+                <% categories.forEach(category => { %>
+                    <div>
+                        <p value="<%= category.name %>"><%= category.name %></p>
+                    </div>
+                   
+                <% }) %>
+            </select>
+        </div>
+        <div>
+            <label for="productDescription">ProductDescription: </label>
+            <input type="text" name="productDescription">
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

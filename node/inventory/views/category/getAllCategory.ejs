@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get categry</title>
+</head>
+<body>
+    <h1>Category List: </h1>
+ <%   categorys.forEach(category=>{%>
+       <div>
+        <h6><%= category.categoryName%></h6>
+        <a href="/category/detail/<%= category.id %>">detail</a>
+        <br>
+        <a href="/category/update/<%= category.id %>">update</a>
+        <br>
+        
+        <form action="/category/delete/<%= category.id%>" method="post">
+            <button type="submit">delete</button>
+        </form>
+       </div>
+      
+  <%  })%>
+  <a href="/category/create">create new Category</a>
+</body>
+</html>

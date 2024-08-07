@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update categry</title>
+</head>
+<body>
+    <h1>Update Category: </h1>
+    <form action="/category/update/<%= category.id %>" method="post">
+        <div>
+            <label for="categoryName">CategoryName: </label>
+            <input type="text" name="categoryName" value=<%= category.categoryName %>>
+
+        </div>
+        <div>
+            <label for="categoryDescription">CategoryDescription: </label>
+            <input type="text" name="categoryDescription" value=<%= category.categoryDescription %>>
+
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

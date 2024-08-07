@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>this is home page</h1>
+    <form action="/product/search" method="post">
+        <label for="category">Enter the category: </label>
+        <input type="text" name="category">
+        <button type="submit">Search</button>
+    </form>
+    
+
+    <% if (products && products.length > 0) { %>
+        <h2>Search Results:</h2>
+        <div id="searchResults">
+            <% products.forEach(product => { %>
+                <div><%= product.name %></div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <p>No search results found.</p>
+    <% } %>
+
+    <a href="/category">see all category</a>
+    <br>
+    <a href="/product">see all product</a>
+</body>
+</html>
