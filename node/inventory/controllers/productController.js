@@ -1,13 +1,19 @@
-const productModel = require("../models/categoryModel")
+const productModel = require("../models/productModel")
 const categoryModel = require("../models/categoryModel")
 const productDetail = async(req,res)=>{
     const {id}= req.params
     const product = await productModel.findById(id)
+
     if(!product){
         res.status(404).json({message:"product not found!"})
     }
+ 
+    const categoryId = product.category
+    const category= await categoryModel.findById(categoryId)
+
+    // console.log(category)
    
-    res.render("product/productDetail",{product})
+    res.render("product/productDetail",{product,category})
 }
 
 const getAllProduct =async(req,res)=>{
@@ -19,9 +25,9 @@ const getAllProduct =async(req,res)=>{
 }
 const getCreateProductPage = async (req,res)=>{
     try {
-        const categories = await categoryModel.find();
-        console.log(categories)
-        res.render("product/createProduct", { categories });
+        const categorys = await categoryModel.find();
+        console.log(categorys)
+        res.render("product/createProduct", { categorys });
       } catch (err) {
         console.error(err);
         res.status(500).send('Error fetching categories');
@@ -47,7 +53,7 @@ const updateProduct= async(req,res)=>{
     const {id} = req.params
     const {productName,productDescription} = req.body
     await productModel.findByIdAndUpdate(id,{productName,productDescription})
-     res.redirect("product")
+     res.redirect("/product")
 }
 const deleteProduct= async (req,res)=>{
     const {id}= req.params

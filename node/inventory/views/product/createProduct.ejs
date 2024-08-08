@@ -16,12 +16,10 @@
             <label for="category">Category: </label>
             <select name="category">
                 <option value="">Select a category</option>
-                <% categories.forEach(category => { %>
-                    <div>
-                        <p value="<%= category.name %>"><%= category.name %></p>
-                    </div>
-                   
+                <% categorys.forEach(category => { %>
+                    <option value = "<%= category.id%>"><%= category.categoryName %></option>
                 <% }) %>
+              
             </select>
         </div>
         <div>

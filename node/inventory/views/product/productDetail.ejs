@@ -8,9 +8,21 @@
 <body>
     <h1> Product Detail: </h1>
     <div>
-        <h6><%= product.productName %></h6>
-        <h6><%= product.productDescription %></h6>
-        <h6><%= product.category  %></h6>
+        <div>
+            <label for="productName">ProductName: </label>
+            <h6><%= product.productName %></h6>
+        </div>
+        <div>
+            <label for="category">Category: </label>
+            <h6><%= category.categoryName %></h6>
+        </div>
+        <div>
+            <label for="productDescription">ProductDescription: </label>
+            <h6><%= product.productDescription %></h6>
+        </div>
+        
+        
+     
     </div>
     <a href="/product">back</a>
 </body>
